@@ -6,10 +6,11 @@ function drawBoard() {
     const boardDiv = document.getElementById('board');
     boardDiv.innerHTML = '';
     for (let i = 0; i < 9; i++) {
-        let cellValue = board[i] === null ? '' : board[i];
+        let cellValue = board[i] === null ? '' : `<span class="${board[i] === 'X' ? 'x-symbol' : 'o-symbol'}">${board[i]}</span>`;
         boardDiv.innerHTML += `<div class="cell" onclick="makeMove(${i})">${cellValue}</div>`;
     }
 }
+
 drawBoard();
 
 function makeMove(i) {
